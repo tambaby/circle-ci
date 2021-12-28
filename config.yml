@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+        auth:
+          username: githubworkflow
+          password: f4eeea2e-c839-4274-8985-126a65b46865  # context / project UI env-var reference
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
